@@ -1,0 +1,49 @@
+{% extends 'base/base.html'%}
+{% block start %}
+
+<header>
+<section id="page-header">
+
+    <h2>#Stay Home</h2>
+    <p>Save More Your Money</p>
+
+</section>
+</header>
+<main>
+
+     
+    <div class="form-inline text-left px-5">
+        <br>
+        <span class="mr-md-auto"><b>{{ product_count }}</b> item found</span>
+    </div>
+
+
+    <section id="product1" class="section-p1">
+        <div class="container">
+            <div class="row">
+                {% for product in products %}
+                <div class="col-md-3">
+                    <div class="pro" onclick="window.location.href='{{ product.get_url }}';">
+                        <img src="{{ product.image.url }}" alt="">
+                        <div class="des">
+                            <span>PRECIOUS PIECES</span>
+                            <h5>{{ product.product_name }}</h5>
+                            <div class="star">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <h4>₹ {{ product.price }}</h4>
+                        </div>
+                        <a href="#"><i class="fas fa-cart-plus cart"></i></a>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+    
+</main>
+{% endblock %}

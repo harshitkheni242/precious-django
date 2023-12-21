@@ -1,0 +1,123 @@
+{% extends "base/base.html"%} 
+{% block start %}
+<section id="prodetails" class="section-p1">
+    <div class="single-pro-image">
+        <img src="{{ single_product.image.url }}" width="100%" id="MainImg" alt="">
+    <br>
+    <br>
+    <div class="small-img-group">
+        <div class="small-img-col">
+            <img src="{{ single_product.image.url }}" width="100%" class="small-img" alt="">
+        </div>
+            <div class="small-img-col">
+                <img src="{{ single_product.image.url }}" width="100%" class="small-img" alt="">
+            </div>
+            <div class="small-img-col">
+                <img src="{{ single_product.image.url }}" width="100%" class="small-img" alt="">
+            </div>
+            <div class="small-img-col">
+                <img src="{{ single_product.image.url }}" width="100%" class="small-img" alt="">
+            </div>
+        </div>
+    
+    </div>
+    
+    <div class="single-pro-details">
+        <h6>{{ request.path }}</h6>
+        <h4>{{ single_product.product_name }}</h4>
+        <h2>₹ {{ single_product.price }}</h2>
+        <select>
+            <option>Select Size</option>
+            <option>Free Size</option>
+        </select>
+        <input type="number" value="1">
+        <br>
+        <br> 
+        {% if single_product.stock <= 0 %}
+            <h5><strong>Out of Stock</strong></h5>
+        {% else %}
+        <a href="#" 
+            class="btn btn-primary">
+            <span class="text">Add to cart</span>
+        </a>        
+        {% endif %}
+       
+        <h4>Product Details</h4>
+        <span>{{ single_product.description }}</span>
+    </div>
+    
+    
+
+</section>
+
+<section id="product1" class="section-p1">
+    <h2>Featured Products</h2>
+    <p>You wear your jewelry, don’t let it wear you</p>
+    <div class="pro-container">
+        <div class="pro" onclick="window.location.href='sproduct.html';">
+            <img src="/media/img/product/1/pro1.webp" alt="">
+            <div class="des">
+                <span>PRICEOUS PIECES</span>
+                <h5>Ganesh designs nackless</h5>
+                <div class="star">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                </div>
+                <h4>500.00</h4>
+            </div>
+            <a href="#"><i class="fas fa-cart-plus cart"></i></a>
+        </div>
+        <div class="pro" onclick="window.location.href='sproduct2.html';">
+            <img src="/media/img/product/2/pro2.webp" alt="">
+            <div class="des">
+                <span>PRICEOUS PIECES</span>
+                <h5>Round Flower nackless</h5>
+                <div class="star">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                </div>
+                <h4>500.00</h4>
+            </div>
+            <a href="#"><i class="fas fa-cart-plus cart"></i></a>
+        </div>
+        <div class="pro" onclick="window.location.href='sproduct3.html';">
+            <img src="/media/img/product/3/pro3.webp" alt="">
+            <div class="des">
+                <span>PRICEOUS PIECES</span>
+                <h5>MultiBird nackless</h5>
+                <div class="star">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                </div>
+                <h4>500.00</h4>
+            </div>
+            <a href="#"><i class="fas fa-cart-plus cart"></i></a>
+        </div>
+        <div class="pro" onclick="window.location.href='sproduct4.html';">
+            <img src="/media/img/product/4/pro4.webp" alt="">
+            <div class="des">
+                <span>PRICEOUS PIECES</span>
+                <h5>Mango Shap nackless</h5>
+                <div class="star">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                </div>
+                <h4>500.00</h4>
+            </div>
+        <a href="#"><i class="fas fa-cart-plus cart"></i></a>
+    </div>
+    </div>
+</section>
+{% endblock %}

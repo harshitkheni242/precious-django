@@ -1,0 +1,318 @@
+{% extends "base/base.html"%}
+{% block start %}
+<section id="hero">
+    <div class="slide active">
+        <h4>Decent Jewelry</h4>
+        <h2>Best Deal Today</h2>
+        <h1>Emerald Fine Jewelry.</h1>
+        <p>Jewelry has the power to be this one little thing that can make you feel unique.</p>
+        <button>Shop Now</button>
+    </div>
+    <div class="slide">
+        <h4>Decent Jewelry</h4>
+        <h2>Best Deal Today</h2>
+        <h1>Emerald Fine Jewelry.</h1>
+        <p>Jewelry has the power to be this one little thing that can make you feel unique.</p>
+        <button>Shop Now</button>
+    </div>
+    <div class="slide">
+        <h4>Decent Jewelry</h4>
+        <h2>Best Deal Today</h2>
+        <h1>Emerald Fine Jewelry.</h1>
+        <p>Jewelry has the power to be this one little thing that can make you feel unique.</p>
+        <button>Shop Now</button>
+    </div>
+    </div>
+    <div class="slide">
+        <h4>Decent Jewelry</h4>
+        <h2>Best Deal Today</h2>
+        <h1>Emerald Fine Jewelry.</h1>
+        <p>Jewelry has the power to be this one little thing that can make you feel unique.</p>
+        <button>Shop Now</button>
+    </div>
+    </div>
+    <div class="slide">
+        <h4>Decent Jewelry</h4>
+        <h2>Best Deal Today</h2>
+        <h1>Emerald Fine Jewelry.</h1>
+        <p>Jewelry has the power to be this one little thing that can make you feel unique.</p>
+        <button>Shop Now</button>
+    </div>
+    </div>
+</section>
+<section id="feature" class="section-p1">
+    <div class="fe-box">
+        <img src="/media/img/shipping/istockphoto-1309243817-612x612.jpg" alt="">
+        <h6>Free shipping</h6>
+    </div>
+    <div class="fe-box">
+        <img src="/media/img/shipping/11zon_resized/order_2.jpg" alt="">
+        <h6>Online Order</h6>
+    </div>
+    <div class="fe-box">
+        <img src="/media/img/shipping/11zon_resized/wallet_5.png" alt="">
+        <h6>Save Money</h6>
+    </div>
+    <div class="fe-box">
+        <img src="/media/img/shipping/11zon_resized/pro_3.jpg" alt="">
+        <h6>Promotion</h6>
+    </div>
+    <div class="fe-box">
+        <img src="/media/img/shipping/11zon_resized/images01.jpg" alt="">
+        <h6>Happy Sell</h6>
+    </div>
+    <div class="fe-box">
+        <img src="/media/img/shipping/11zon_resized/support_4.png" alt="">
+        <h6>24/7 Support</h6>
+    </div>
+</section>
+
+
+<!-- Category -->
+<div class="container">
+    <h1 class="text-center py-3 ">Explore Categories</h1>
+    <p class="text-center">Our designs never go out of trend</p>
+    <div class="row gy-3 my-3">
+        {% for categories in links %}
+        <div class="col-sm-6 col-md-4 col-lg-4">
+            <div class="card">
+                <a href="{{categories.get_url}}"><img src="{{ categories.cat_image.url}}" class="card-img-top"  alt="image"></a>
+                <a href="{{categories.get_url}}" class="btn btn-success">{{ categories.category_name}}</a>
+            </div>
+        </div>
+        {% endfor %}
+        <!-- <div class="col-sm-6 col-md-4 col-lg-4">
+            <div class="card">
+                <img src="/media/img/categories/Ring.png" class="card-img-top" alt="image">
+                <a href="#" class="btn btn-button">Rings</a>
+            </div>
+        </div>
+        <div class="col-sm-6 col-md-4 col-lg-4">
+            <div class="card">
+                <img src="/media/img/categories/Earrings.webp" class="card-img-top" alt="image">
+                <a href="#" class="btn btn-BabyBlue">Earrings</a>
+            </div>
+        </div>
+        <div class="col-sm-6 col-md-4 col-lg-4">
+            <div class="card">
+                <img src="/media/img/categories/Necklace.png" class="card-img-top" alt="image">
+                <a href="#" class="btn btn-Amber">Necklace</a>
+            </div>
+        </div>
+        <div class="col-sm-6 col-md-4 col-lg-4">
+            <div class="card">
+                <img src="/media/img/categories/Kada.webp" class="card-img-top" alt="image">
+                <a href="#" class="btn btn-Lilac">Kada</a>
+            </div>
+        </div>
+        <div class="col-sm-6 col-md-4 col-lg-4">
+            <div class="card">
+                <img src="/media/img/categories/Ear cuff.png" class="card-img-top" alt="Ear Cuff">
+                <a href="#" class="btn btn-Coral">Ear Cuff</a>
+            </div>
+        </div> -->
+       
+    </div>
+</div>
+<!-- End Category -->
+
+
+<!--Featured Products  -->
+<section id="product1" class="section-p1">
+    <h2>Featured Products</h2>
+    <p>Our designs never go out of trend</p>
+    <div class="pro-container">
+        {% for product in products %}
+        <div class="pro">
+            <a href="{{ product.get_url }}"><img src="{{ product.image.url }}" alt=""></a> 
+            <div class="des">
+                <span>PRICEOUS PIECES</span>
+                <a href="{{ product.get_url }}"><h5>{{ product.product_name }}</h5></a>
+                <div class="star">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                </div>
+                <h4>₹ {{ product.price }}</h4>
+            </div>
+            <a href="#"><i class="fas fa-cart-plus cart"></i></a>
+        </div>
+        {% endfor %}
+    </div>
+</section>
+<!--End Featured Products  -->
+
+<section id="banner" class="section-m1">
+    <h4>Our Service</h4>
+    <h2>Exclusive <span>Discount</span> For the Products</h2>
+    <button class="normal">VISIT</button>
+</section>
+
+<section id="product1" class="section-p1">
+    <h2>Arrivel Products</h2>
+    <p>You wear your jewelry, don’t let it wear you</p>
+    <div class="pro-container">
+        <div class="pro">
+            <img src="/media/img/new/01.jpg" alt="">
+            <div class="des">
+                <span>PRICEOUS PIECES</span>
+                <h5>Bird Cage nackless</h5>
+                <div class="star">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                </div>
+                <h4>500.00</h4>
+            </div>
+            <a href="#"><i class="fas fa-cart-plus cart"></i></a>
+        </div>
+        <div class="pro">
+            <img src="/media/img/new/02.jpg" alt="">
+            <div class="des">
+                <span>PRICEOUS PIECES</span>
+                <h5>MultiBird nackless</h5>
+                <div class="star">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                </div>
+                <h4>500.00</h4>
+            </div>
+            <a href="#"><i class="fas fa-cart-plus cart"></i></a>
+        </div>
+        <div class="pro">
+            <img src="/media/img/new/03.jpg" alt="">
+            <div class="des">
+                <span>PRICEOUS PIECES</span>
+                <h5>Bride Dolly nackless</h5>
+                <div class="star">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                </div>
+                <h4>500.00</h4>
+            </div>
+            <a href="#"><i class="fas fa-cart-plus cart"></i></a>
+        </div>
+        <div class="pro">
+            <img src="/media/img/new/04.jpg" alt="">
+            <div class="des">
+                <span>PRICEOUS PIECES</span>
+                <h5>Krishna Flute nackless</h5>
+                <div class="star">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                </div>
+                <h4>500.00</h4>
+            </div>
+            <a href="#"><i class="fas fa-cart-plus cart"></i></a>
+        </div>
+        <div class="pro">
+            <img src="/media/img/new/05.jpg" alt="">
+            <div class="des">
+                <span>PRICEOUS PIECES</span>
+                <h5>Maa Durga nackless</h5>
+                <div class="star">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                </div>
+                <h4>500.00</h4>
+            </div>
+            <a href="#"><i class="fas fa-cart-plus cart"></i></a>
+        </div>
+        <div class="pro">
+            <img src="/media/img/new/06.jpg" alt="">
+            <div class="des">
+                <span>PRICEOUS PIECES</span>
+                <h5>RoundChokeer Chain nackless</h5>
+                <div class="star">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                </div>
+                <h4>500.00</h4>
+            </div>
+            <a href="#"><i class="fas fa-cart-plus cart"></i></a>
+        </div>
+        <div class="pro">
+            <img src="/media/img/new/07.jpg" alt="">
+            <div class="des">
+                <span>PRICEOUS PIECES</span>
+                <h5>Round Chokeer nackless</h5>
+                <div class="star">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                </div>
+                <h4>500.00</h4>
+            </div>
+            <a href="#"><i class="fas fa-cart-plus cart"></i></a>
+        </div>
+        <div class="pro">
+            <img src="/media/img/new/08.jpg" alt="">
+            <div class="des">
+                <span>PRICEOUS PIECES</span>
+                <h5>peacock nackless</h5>
+                <div class="star">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                </div>
+                <h4>500.00</h4>
+            </div>
+            <a href="#"><i class="fas fa-cart-plus cart"></i></a>
+        </div>
+    </div>
+</section>
+
+<section id="sm-banner" class="section-p1">
+    <div class="banner-box">
+        <h4>Best Deals</h4>
+        <h2>Buy 1 Get 1 Free</h2>
+        <span>The Best Classic Jwellery is on Sale </span>
+        <button class="white">Learn More</button>
+    </div>
+    <div class="banner-box banner-box2">
+        <h4>New Collection</h4>
+        <h2>Comming Soon</h2>
+        <span>The Best Classic Jwellery is on Sale </span>
+        <button class="white">Collection</button>
+    </div>
+</section>
+
+<section id="banner3">
+    <div class="banner-box">
+        <h2>SALE SALE SALE</h2>
+        <h3>The Best Collection</h3>
+    </div>
+    <div class="banner-box banner-box2">
+        <h2>Best Pricing</h2>
+        <h3>Under Your Choice</h3>
+    </div>
+    <div class="banner-box banner-box3">
+        <h2>Awesome Look</h2>
+        <h3>For Any Outfit</h3>
+    </div>
+</section>
+
+{% endblock %}
